@@ -21,27 +21,4 @@ Uma Pokédex interativa desenvolvida com **React** e **Vite**, que permite visua
 
 ## Estrutura das pastas
 
-├── frontend/
-│   ├── public/
-│   │   ├── favicon-transparente.png
-│   │   ├── pokemon-icon.png
-│   │   └── pokemon-icon1.png
-│   ├── src/
-│   │   ├── assets/
-│   │   │   └── pokemon-desconhecido-icon.png
-│   │   ├── components/
-│   │   │   ├── Header/
-│   │   │   │   └── Header.jsx
-│   │   │   ├── Modal/
-│   │   │   │   └── Modal.jsx
-│   │   │   └── PokemonCard/
-│   │   │   │   └── PokemonCard.jsx
-│   │   ├── data/
-│   │   │   └── pokemons.json
-│   │   ├── Home/
-│   │   │   └── Home.jsx
-│   │   ├── App.jsx
-│   │   ├── main.jsx
-│   │   └── index.css
-│   ├── index.html
-│   └── README.md
+![image](https://github.com/user-attachments/assets/ecb9db64-0b9c-464c-b713-c06850e21a2e)
