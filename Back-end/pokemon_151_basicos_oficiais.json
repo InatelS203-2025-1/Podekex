@@ -2,6 +2,7 @@
   {
     "id": 1,
     "name": "Bulbasaur",
+    "image": "https://img.pokemondb.net/sprites/black-white/normal/bulbasaur.png",
     "hp": 45,
     "skill": "Overgrow",
     "description": "A strange seed was planted on its back at birth. The plant sprouts and grows with this POKéMON.",
@@ -28,17 +29,6 @@
     "type": "Grass/Poison",
     "viewed": false,
     "on_deck": false
-  },
-  {
-    "id": 3,
-    "name": "Venusaur Prism Star",
-    "hp": 80,
-    "skill": "Overgrow",
-    "description": "The plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight.",
-    "type": "Grass/Poison",
-    "viewed": false,
-    "on_deck": false,
-    "brilho_holografico": true
   },
   {
     "id": 4,
@@ -69,28 +59,6 @@
     "type": "Fire/Flying",
     "viewed": false,
     "on_deck": false
-  },
-  {
-    "id": 6,
-    "name": "Charizard VMax",
-    "hp": 78,
-    "skill": "Blaze",
-    "description": "Spits fire that is hot enough to melt boulders. Known to cause forest fires unintentionally.",
-    "type": "Fire/Flying",
-    "viewed": false,
-    "on_deck": false,
-    "v_power" :40
-  },
-  {
-    "id": 6,
-    "name": "Charizard Prism Star",
-    "hp": 78,
-    "skill": "Blaze",
-    "description": "Spits fire that is hot enough to melt boulders. Known to cause forest fires unintentionally.",
-    "type": "Fire/Flying",
-    "viewed": false,
-    "on_deck": false,
-    "brilho_holografico": true
   },
   {
     "id": 7,
@@ -283,17 +251,6 @@
     "on_deck": false
   },
   {
-    "id": 25,
-    "name": "Pikachu Prism Star",
-    "hp": 35,
-    "skill": "Static",
-    "description": "When several of these Pokémon gather, their electricity could build and cause lightning storms.",
-    "type": "Electric",
-    "viewed": false,
-    "on_deck": false,
-    "brilho_holografico": true
-  },
-  {
     "id": 26,
     "name": "Raichu",
     "hp": 60,
@@ -422,17 +379,6 @@
     "type": "Fire",
     "viewed": false,
     "on_deck": false
-  },
-  {
-    "id": 38,
-    "name": "Ninetales VMAx",
-    "hp": 73,
-    "skill": "Flash Fire",
-    "description": "Very smart and very vengeful. Grabbing one of its many tails could result in a 1000-year curse.",
-    "type": "Fire",
-    "viewed": false,
-    "on_deck": false,
-    "v_power": 50
   },
   {
     "id": 39,
@@ -573,17 +519,6 @@
     "type": "Normal",
     "viewed": false,
     "on_deck": false
-  },
-  {
-    "id": 52,
-    "name": "Meowth Prism Star",
-    "hp": 40,
-    "skill": "Pickup",
-    "description": "Adores circular objects. Wanders the streets on a nightly basis to look for dropped loose change.",
-    "type": "Normal",
-    "viewed": false,
-    "on_deck": false,
-    "brilho_holografico": true
   },
   {
     "id": 53,
@@ -1006,17 +941,6 @@
     "on_deck": false
   },
   {
-    "id": 94,
-    "name": "Gengar VMax",
-    "hp": 60,
-    "skill": "Levitate",
-    "description": "Under a full moon, this POKéMON likes to mimic the shadows of people and laugh at their fright.",
-    "type": "Ghost/Poison",
-    "viewed": false,
-    "on_deck": false,
-    "v_power": 30
-  },
-  {
     "id": 95,
     "name": "Onix",
     "hp": 35,
@@ -1307,17 +1231,6 @@
     "on_deck": false
   },
   {
-    "id": 123,
-    "name": "Scyther VMax",
-    "hp": 70,
-    "skill": "Swarm",
-    "description": "With ninja-like agility and speed, it can create the illusion that there is more than one.",
-    "type": "Bug/Flying",
-    "viewed": false,
-    "on_deck": false,
-    "v_power": 50
-  },
-  {
     "id": 124,
     "name": "Jynx",
     "hp": 65,
@@ -1336,17 +1249,6 @@
     "type": "Electric",
     "viewed": false,
     "on_deck": false
-  },
-  {
-    "id": 125,
-    "name": "Electabuzz VMax",
-    "hp": 65,
-    "skill": "Static",
-    "description": "Normally found near power plants, they can wander away and cause major blackouts in cities.",
-    "type": "Electric",
-    "viewed": false,
-    "on_deck": false,
-    "v_power": 50
   },
   {
     "id": 126,
@@ -1427,17 +1329,6 @@
     "type": "Normal",
     "viewed": false,
     "on_deck": false
-  },
-  {
-    "id": 133,
-    "name": "Eevee Prism Star",
-    "hp": 55,
-    "skill": "Run Away",
-    "description": "Capable of copying an enemy’s genetic code to instantly transform itself into a duplicate of the enemy.",
-    "type": "Normal",
-    "viewed": false,
-    "on_deck": false,
-    "brilho_holografico":true
   },
   {
     "id": 134,
@@ -1600,17 +1491,6 @@
     "on_deck": false
   },
   {
-    "id": 149,
-    "name": "Dragonite VMax",
-    "hp": 91,
-    "skill": "Inner Focus",
-    "description": "An extremely rarely seen marine POKéMON. Its intelligence is said to match that of humans.",
-    "type": "Dragon/Flying",
-    "viewed": false,
-    "on_deck": false,
-    "v_power":60
-  },
-  {
     "id": 150,
     "name": "Mewtwo",
     "hp": 106,
@@ -1621,17 +1501,6 @@
     "on_deck": false
   },
   {
-    "id": 150,
-    "name": "Mewtwo VMax",
-    "hp": 106,
-    "skill": "Pressure",
-    "description": "It was created by a scientist after years of horrific gene splicing and DNA engineering experiments.",
-    "type": "Psychic",
-    "viewed": false,
-    "on_deck": false,
-    "v_power": 80
-  },
-  {
     "id": 151,
     "name": "Mew",
     "hp": 100,
@@ -1640,16 +1509,5 @@
     "type": "Psychic",
     "viewed": false,
     "on_deck": false
-  },
-  {
-    "id": 151,
-    "name": "Mew Prism Star",
-    "hp": 100,
-    "skill": "Synchronize",
-    "description": "So rare that it is still said to be a mirage by many experts. Only a few people have seen it worldwide.",
-    "type": "Psychic",
-    "viewed": false,
-    "on_deck": false,
-    "brilho_holografico": true
   }
 ]
