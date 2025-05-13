@@ -1,5 +1,47 @@
-# Podekex
+# Podékex
 
-#  	Aplicação de histórico de cartas
+Uma Pokédex interativa desenvolvida com **React** e **Vite**, que permite visualizar os 151 Pokémon iniciais. Os usuários podem buscar, visualizar detalhes, filtrar por status (vistos, no baralho) e acessar informações detalhadas via modal.
 
-Responsável por gerenciar as cartas conhecidas por cada jogador. A aplicação deve mostrar, por meio de uma interface gráfica, quantas cartas existem e quantas o jogador já conheceu (já teve em seu baralho). Mesmo que um jogador trocar uma carta, as informações da carta trocada continuam disponíveis na lista.
+
+## Funcionalidades
+
+- Listagem de todos os 151 Pokémon.
+- Modal com informações detalhadas ao clicar em Pokémon vistos.
+- Barra de busca por nome ou ID.
+- Filtro por status: todos, vistos e no baralho.
+- Responsiva e com design simples e acessível.
+
+
+## Tecnologias Utilizadas
+
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+
+## Estrutura das pastas
+
+├── frontend/
+│   ├── public/
+│   │   ├── favicon-transparente.png
+│   │   ├── pokemon-icon.png
+│   │   └── pokemon-icon1.png
+│   ├── src/
+│   │   ├── assets/
+│   │   │   └── pokemon-desconhecido-icon.png
+│   │   ├── components/
+│   │   │   ├── Header/
+│   │   │   │   └── Header.jsx
+│   │   │   ├── Modal/
+│   │   │   │   └── Modal.jsx
+│   │   │   └── PokemonCard/
+│   │   │   │   └── PokemonCard.jsx
+│   │   ├── data/
+│   │   │   └── pokemons.json
+│   │   ├── Home/
+│   │   │   └── Home.jsx
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── index.css
+│   ├── index.html
+│   └── README.md
