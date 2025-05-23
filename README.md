@@ -6,9 +6,10 @@ Este projeto consiste em uma aplicação web para visualização e gerenciamento
 - Back-end: FastAPI
 - Banco de dados: JSON local com os 151 primeiros Pokémons
 
+
 ## Modelos Arquiteturais
 
-1. Arquitetura do Frontend: SPA (Single Page Application)
+1. Arquitetura do Frontend: **SPA** (Single Page Application)
 Optamos pelo modelo SPA para garantir:
 
 - Experiência fluida e rápida, sem recarregamento de páginas.
@@ -21,7 +22,7 @@ A aplicação React é responsável por:
 - Fazer requisições HTTP à API backend para consumir e manipular os dados.
 - Renderizar dinamicamente os componentes com base no estado global.
 
-2. Arquitetura do Backend: SOA (Service-Oriented Architecture)
+2. Arquitetura do Backend: **SOA** (Service-Oriented Architecture)
 A API RESTful foi construída com FastAPI utilizando o padrão SOA, garantindo:
 
 - Separação clara das responsabilidades por domínio.
@@ -35,6 +36,7 @@ O backend possui:
 - Camada de Model: define a estrutura dos dados com Pydantic.
 - Camada de Dados: simula persistência com um arquivo pokemons.json.
 
+
 ## Tecnologias Utilizadas
 
 - [React](https://reactjs.org/)
@@ -46,6 +48,7 @@ O backend possui:
 - [Pydantic](https://docs.pydantic.dev/latest/)
 - [Uvicorn](https://www.uvicorn.org)
 - [Axios](https://axios-http.com/ptbr/)
+
 
 ## Estrutura das pastas
 
@@ -80,11 +83,13 @@ O backend possui:
 └── README.md
 ```
 
+
 ## Pré-requisitos
 
 - Node.js (v18+)
 - Python 3.9+
 - pip
+
 
 ### Backend
 
@@ -111,6 +116,7 @@ uvicorn app.main:app --reload
 ```
 Por padrão, rodará em: http://localhost:8000
 
+
 ### Frontend
 
 1. Navegue até o diretório frontend:
@@ -130,6 +136,7 @@ npm run dev
 ```
 Por padrão, rodará em: http://localhost:5173
 
+
 ### Estrutura do backend
 
 - 📁 api/: define rotas
@@ -148,7 +155,9 @@ Por padrão, rodará em: http://localhost:5173
 | POST   | /api/pokemons/{id}/seen | Marca como visto             |
 | POST   | /api/pokemons/{id}/deck | Adiciona ao baralho          |
 | DELETE | /api/pokemons/{id}/deck | Remove do baralho            |
+
 Acesse http://localhost:8000/docs para a documentação interativa (Swagger UI).
+
 
 ### Estrutura do frontend
 
@@ -157,6 +166,7 @@ Acesse http://localhost:8000/docs para a documentação interativa (Swagger UI).
 - 📁 api/: Configuração do Axios para consumir a API
 - 📁 data/: (não mais usado, agora os dados vêm da API)
 
+
 ### Funcionalidades
 
 - Busca de pokémons por nome ou ID.
@@ -164,6 +174,7 @@ Acesse http://localhost:8000/docs para a documentação interativa (Swagger UI).
 - Modal com informações detalhadas ao clicar.
 - Marcar como visto ao interagir.
 - Adicionar ou remover pokémons do baralho
+
 
 ## Integração Front ↔ Back
 
