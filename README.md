@@ -23,28 +23,31 @@ Uma Pokédex interativa desenvolvida com **React** e **Vite**, que permite visua
 
 ```
 /
+├── backend/
+│   ├── app/
+│   │   ├── api/
+│   │   ├── data/
+│   │   ├── models/
+│   │   ├── services/
+│   │   └── main.py
+│   └── requirements.txt
+├── docs/
+│   ├── casos de uso/
+│   ├── uml/
+│   └── diagrama arquitetural/
 ├── frontend/
 │   ├── public/
-│   │   ├── favicon-transparente.png
-│   │   ├── pokemon-icon.png
-│   │   └── pokemon-icon1.png
 │   ├── src/
+│   │   ├── api/
 │   │   ├── assets/
-│   │   │   └── pokemon-desconhecido-icon.png
 │   │   ├── components/
 │   │   │   ├── Header/
-│   │   │   │   └── Header.jsx
 │   │   │   ├── Modal/
-│   │   │   │   └── Modal.jsx
 │   │   │   └── PokemonCard/
-│   │   │   │   └── PokemonCard.jsx
-│   │   ├── data/
-│   │   │   └── pokemons.json
 │   │   ├── Home/
-│   │   │   └── Home.jsx
 │   │   ├── App.jsx
-│   │   ├── main.jsx
-│   │   └── index.css
-│   ├── index.html
-│   └── README.md
+│   │   └── main.jsx
+│   ├── package.json
+│   └── index.html
+└── README.md
 ```
