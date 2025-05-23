@@ -21,7 +21,8 @@ Uma Pokédex interativa desenvolvida com **React** e **Vite**, que permite visua
 
 ## Estrutura das pastas
 
-'''bash
+´´´bash
+/
 ├── frontend/
 │   ├── public/
 │   │   ├── favicon-transparente.png
@@ -46,4 +47,4 @@ Uma Pokédex interativa desenvolvida com **React** e **Vite**, que permite visua
 │   │   └── index.css
 │   ├── index.html
 │   └── README.md
-'''
+´´´
