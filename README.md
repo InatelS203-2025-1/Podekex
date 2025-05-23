@@ -94,15 +94,15 @@ O backend possui:
 - Node.js (v18+)
 - Python 3.9+
 - pip
+<br>
 
-
-### Clone o repositório
+## Clone o repositório
 ```bash
 git clone https://github.com/InatelS203-2025-1/Podekex.git
 ```
 <br>
 
-### Backend
+## Backend
 
 1. Navegue até o diretório backend:
 ```bash
@@ -127,24 +127,6 @@ uvicorn app.main:app --reload
 ```
 Por padrão, rodará em: http://localhost:8000
 <br>
-
-### Frontend
-
-1. Navegue até o diretório frontend:
-```bash
-cd frontend
-```
-
-2. Instale as dependências:
-```bash
-npm install
-```
-
-3. Execute o projeto:
-```bash
-npm run dev
-```
-Por padrão, rodará em: http://localhost:5173
 <br>
 
 ### Estrutura do backend
@@ -169,6 +151,27 @@ Por padrão, rodará em: http://localhost:5173
 
 Acesse http://localhost:8000/docs para a documentação interativa (Swagger UI).
 <br>
+<br>
+
+## Frontend
+
+1. Navegue até o diretório frontend:
+```bash
+cd frontend
+```
+
+2. Instale as dependências:
+```bash
+npm install
+```
+
+3. Execute o projeto:
+```bash
+npm run dev
+```
+Por padrão, rodará em: http://localhost:5173
+<br>
+<br>
 
 ### Estrutura do frontend
 
@@ -185,6 +188,7 @@ Acesse http://localhost:8000/docs para a documentação interativa (Swagger UI).
 - Modal com informações detalhadas ao clicar.
 - Marcar como visto ao interagir.
 - Adicionar ou remover pokémons do baralho
+<br>
 <br>
 
 ## Integração Front ↔ Back
