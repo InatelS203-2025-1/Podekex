@@ -96,6 +96,10 @@ O backend possui:
 - pip
 
 
+##Clonando o repositório
+```bash
+git clone https://github.com/InatelS203-2025-1/Podekex.git
+```
 ### Backend
 
 1. Navegue até o diretório backend:
