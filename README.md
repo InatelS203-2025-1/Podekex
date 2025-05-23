@@ -10,7 +10,7 @@ Este projeto consiste em uma aplicação web para visualização e gerenciamento
 - Front-end: React + Tailwind CSS
 - Back-end: FastAPI
 - Banco de dados: JSON local com os 151 primeiros Pokémons
-
+<br>
 
 ## Modelos Arquiteturais
 
@@ -40,7 +40,7 @@ O backend possui:
 - Camada de Service: contém a lógica de negócios (ex.: marcação de pokémons como vistos).
 - Camada de Model: define a estrutura dos dados com Pydantic.
 - Camada de Dados: simula persistência com um arquivo pokemons.json.
-
+<br>
 
 ## Tecnologias Utilizadas
 
@@ -53,7 +53,7 @@ O backend possui:
 - [Pydantic](https://docs.pydantic.dev/latest/)
 - [Uvicorn](https://www.uvicorn.org)
 - [Axios](https://axios-http.com/ptbr/)
-
+<br>
 
 ## Estrutura das pastas
 
@@ -87,7 +87,7 @@ O backend possui:
 │   └── index.html
 └── README.md
 ```
-
+<br>
 
 ## Pré-requisitos
 
@@ -96,10 +96,11 @@ O backend possui:
 - pip
 
 
-## Clonando o repositório
+### Clone o repositório
 ```bash
 git clone https://github.com/InatelS203-2025-1/Podekex.git
 ```
+<br>
 
 ### Backend
 
@@ -125,13 +126,12 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 Por padrão, rodará em: http://localhost:8000
-
+<br>
 
 ### Frontend
 
 1. Navegue até o diretório frontend:
 ```bash
-cd .. # apenas caso esteja no backend/
 cd frontend
 ```
 
@@ -145,7 +145,7 @@ npm install
 npm run dev
 ```
 Por padrão, rodará em: http://localhost:5173
-
+<br>
 
 ### Estrutura do backend
 
@@ -154,6 +154,7 @@ Por padrão, rodará em: http://localhost:5173
 - 📁 services/: lógica de negócios
 - 📁 data/: arquivo pokemons.json
 - 📄 main.py: ponto de entrada da aplicação
+<br>
 
 ### Endpoints principais
 
@@ -167,7 +168,7 @@ Por padrão, rodará em: http://localhost:5173
 | DELETE | /api/pokemons/{id}/deck | Remove do baralho            |
 
 Acesse http://localhost:8000/docs para a documentação interativa (Swagger UI).
-
+<br>
 
 ### Estrutura do frontend
 
@@ -175,7 +176,7 @@ Acesse http://localhost:8000/docs para a documentação interativa (Swagger UI).
 - 📁 Home/: Página principal
 - 📁 api/: Configuração do Axios para consumir a API
 - 📁 data/: (não mais usado, agora os dados vêm da API)
-
+<br>
 
 ### Funcionalidades
 
@@ -184,7 +185,7 @@ Acesse http://localhost:8000/docs para a documentação interativa (Swagger UI).
 - Modal com informações detalhadas ao clicar.
 - Marcar como visto ao interagir.
 - Adicionar ou remover pokémons do baralho
-
+<br>
 
 ## Integração Front ↔ Back
 
