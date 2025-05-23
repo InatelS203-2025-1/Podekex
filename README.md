@@ -1,4 +1,4 @@
-<p align="center">
+<p align="left">
   <img src="https://icon-library.com/images/pokedex-icon/pokedex-icon-19.jpg" alt="Pokédex Icon" width="100"/>
 </p>
 
