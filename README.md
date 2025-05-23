@@ -21,7 +21,7 @@ Uma Pokédex interativa desenvolvida com **React** e **Vite**, que permite visua
 
 ## Estrutura das pastas
 
-´´´bash
+```
 /
 ├── frontend/
 │   ├── public/
@@ -47,4 +47,4 @@ Uma Pokédex interativa desenvolvida com **React** e **Vite**, que permite visua
 │   │   └── index.css
 │   ├── index.html
 │   └── README.md
-´´´
+```
