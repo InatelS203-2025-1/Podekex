@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://icon-library.com/images/pokedex-icon/pokedex-icon-19.jpg" alt="Pokédex Icon" width="100"/>
+</p>
+
 # Podékex
 
 Este projeto consiste em uma aplicação web para visualização e gerenciamento de uma Pokédex, desenvolvida com:
