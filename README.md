@@ -1,23 +1,51 @@
 # Podékex
 
-Uma Pokédex interativa desenvolvida com **React** e **Vite**, que permite visualizar os 151 Pokémon iniciais. Os usuários podem buscar, visualizar detalhes, filtrar por status (vistos, no baralho) e acessar informações detalhadas via modal.
+Este projeto consiste em uma aplicação web para visualização e gerenciamento de uma Pokédex, desenvolvida com:
 
+- Front-end: React + Tailwind CSS
+- Back-end: FastAPI
+- Banco de dados: JSON local com os 151 primeiros Pokémons
 
-## Funcionalidades
+## Modelos Arquiteturais
 
-- Listagem de todos os 151 Pokémon.
-- Modal com informações detalhadas ao clicar em Pokémon vistos.
-- Barra de busca por nome ou ID.
-- Filtro por status: todos, vistos e no baralho.
-- Responsiva e com design simples e acessível.
+1. Arquitetura do Frontend: SPA (Single Page Application)
+Optamos pelo modelo SPA para garantir:
 
+- Experiência fluida e rápida, sem recarregamento de páginas.
+- Separação clara entre apresentação (frontend) e lógica de negócios (backend).
+- Facilidade de manutenção e escalabilidade.
+
+A aplicação React é responsável por:
+
+- Gerenciar estado e interface.
+- Fazer requisições HTTP à API backend para consumir e manipular os dados.
+- Renderizar dinamicamente os componentes com base no estado global.
+
+2. Arquitetura do Backend: SOA (Service-Oriented Architecture)
+A API RESTful foi construída com FastAPI utilizando o padrão SOA, garantindo:
+
+- Separação clara das responsabilidades por domínio.
+- Serviços modulares e independentes.
+- Facilidade para evolução e manutenção da aplicação.
+
+O backend possui:
+
+- Camada de API: expõe os endpoints.
+- Camada de Service: contém a lógica de negócios (ex.: marcação de pokémons como vistos).
+- Camada de Model: define a estrutura dos dados com Pydantic.
+- Camada de Dados: simula persistência com um arquivo pokemons.json.
 
 ## Tecnologias Utilizadas
 
 - [React](https://reactjs.org/)
 - [Vite](https://vitejs.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
-
+- [Headless UI](https://headlessui.com) (Menu)
+- [Heroicons](https://heroicons.com)
+- [FastAPI](https://fastapi.tiangolo.com)
+- [Pydantic](https://docs.pydantic.dev/latest/)
+- [Uvicorn](https://www.uvicorn.org)
+- [Axios](https://axios-http.com/ptbr/)
 
 ## Estrutura das pastas
 
@@ -51,3 +79,94 @@ Uma Pokédex interativa desenvolvida com **React** e **Vite**, que permite visua
 │   └── index.html
 └── README.md
 ```
+
+## Pré-requisitos
+
+- Node.js (v18+)
+- Python 3.9+
+- pip
+
+### Backend
+
+1. Navegue até o diretório backend:
+```bash
+cd backend
+```
+
+2. (Opcional) Crie e ative um ambiente virtual:
+```bash
+python -m venv venv
+source venv/bin/activate  # Linux/macOS
+venv\Scripts\activate  # Windows
+```
+
+3. Instale as dependências:
+```bash
+pip install -r requirements.txt
+```
+
+4. Execute o servidor:
+```bash
+uvicorn app.main:app --reload
+```
+Por padrão, rodará em: http://localhost:8000
+
+### Frontend
+
+1. Navegue até o diretório frontend:
+```bash
+cd .. # apenas caso esteja no backend/
+cd frontend
+```
+
+2. Instale as dependências:
+```bash
+npm install
+```
+
+3. Execute o projeto:
+```bash
+npm run dev
+```
+Por padrão, rodará em: http://localhost:5173
+
+### Estrutura do backend
+
+- 📁 api/: define rotas
+- 📁 models/: define o schema com Pydantic
+- 📁 services/: lógica de negócios
+- 📁 data/: arquivo pokemons.json
+- 📄 main.py: ponto de entrada da aplicação
+
+### Endpoints principais
+
+| Método | Rota                    | Descrição                    |
+| ------ | ----------------------- | ---------------------------- |
+| GET    | /api/pokemons           | Lista todos os pokémons      |
+| GET    | /api/pokemons/seen      | Lista os pokémons vistos     |
+| GET    | /api/pokemons/deck      | Lista os pokémons no baralho |
+| POST   | /api/pokemons/{id}/seen | Marca como visto             |
+| POST   | /api/pokemons/{id}/deck | Adiciona ao baralho          |
+| DELETE | /api/pokemons/{id}/deck | Remove do baralho            |
+Acesse http://localhost:8000/docs para a documentação interativa (Swagger UI).
+
+### Estrutura do frontend
+
+- 📁 components/: Componentes reutilizáveis (Header, Modal, PokemonCard)
+- 📁 Home/: Página principal
+- 📁 api/: Configuração do Axios para consumir a API
+- 📁 data/: (não mais usado, agora os dados vêm da API)
+
+### Funcionalidades
+
+- Busca de pokémons por nome ou ID.
+- Filtros: Todos, Vistos, Baralho.
+- Modal com informações detalhadas ao clicar.
+- Marcar como visto ao interagir.
+- Adicionar ou remover pokémons do baralho
+
+## Integração Front ↔ Back
+
+- O front consome os dados da API via Axios.
+- As ações (marcar como visto, adicionar/remover do baralho) são feitas via requisições POST/DELETE.
+- Middleware CORS configurado no FastAPI para permitir conexão com React (localhost:5173).
