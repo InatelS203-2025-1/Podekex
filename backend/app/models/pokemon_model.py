@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from typing import List
 
 class Pokemon(BaseModel):
     id: int
@@ -7,6 +8,6 @@ class Pokemon(BaseModel):
     hp: int
     skill: str
     description: str
-    type: str
+    type: List[str]
     viewed: bool
     on_deck: bool
