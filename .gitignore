@@ -1,0 +1,42 @@
+# === BACKEND ===
+
+# Ambiente virtual
+venv/
+.env
+*.env
+
+# Arquivos Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Logs
+*.log
+
+# === FRONTEND ===
+
+# Dependências
+frontend/node_modules/
+
+# Builds
+frontend/dist/
+frontend/build/
+
+# Arquivos de lock (opcional se quiser)
+pnpm-lock.yaml
+yarn.lock
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# IDEs e editores
+.vscode/
+.idea/
+
+# === Outros ===
+
+# Arquivos temporários
+*.tmp
+*.swp
+*.swo
