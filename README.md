@@ -9,7 +9,7 @@ Este projeto consiste em uma aplicação web para visualização e gerenciamento
 
 - Front-end: React + Tailwind CSS
 - Back-end: FastAPI
-- Banco de dados: JSON local com os 151 primeiros Pokémons
+- Banco de dados: JSON local com os 1025 Pokémons
 <br>
 
 ## Modelos Arquiteturais
