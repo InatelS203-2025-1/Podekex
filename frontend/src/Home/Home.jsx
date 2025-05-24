@@ -23,7 +23,7 @@ function Home() {
     API.get("/pokemons")
       .then(res => setPokemons(res.data.map(p => ({
         ...p,
-        image: `https://img.pokemondb.net/sprites/black-white/normal/${p.name.toLowerCase()}.png`
+        image: `https://img.pokemondb.net/sprites/home/normal/${p.name.toLowerCase()}.png`
       }))))
       .catch(err => console.error("Erro ao carregar pokémons", err));
   }, []);
