@@ -13,6 +13,12 @@ const FILTERS = {
   DECK: "baralho",
 };
 
+const filterStrategies = {
+  [FILTERS.ALL]: () => true,
+  [FILTERS.VIEWED]: (p) => p.viewed,
+  [FILTERS.DECK]: (p) => p.on_deck,
+};
+
 function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   const [filter, setFilter] = useState(FILTERS.ALL);
@@ -35,10 +41,7 @@ function Home() {
       const matchId = pokemon.id.toString().includes(searchTerm);
       const matchesSearch = matchName || matchId;
 
-      if (filter === FILTERS.VIEWED && !pokemon.viewed) return false;
-      if (filter === FILTERS.DECK && !pokemon.on_deck) return false;
-
-      return matchesSearch;
+      return matchesSearch && filterStrategies[filter](pokemon);
     })
     .sort((a, b) => a.id - b.id);
 
