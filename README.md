@@ -42,6 +42,43 @@ O backend possui:
 - Camada de Dados: simula persistência com um arquivo pokemons.json.
 <br>
 
+## Design Patterns
+
+1. Facade + Singleton
+
+```javascript
+import axios from 'axios';
+
+const api = axios.create({
+  baseURL: 'http://localhost:8000',
+});
+
+export const getPokemons = () => api.get('/pokemons');
+```
+
+2. Observer
+```javascript
+const [pokemons, setPokemons] = useState([]);   
+
+useEffect(() => {
+  getPokemons().then(response => setPokemons(response.data));
+}, []);
+```
+
+3. Strategy
+```javascript
+const filterPokemons = (strategy) => {
+  switch (strategy) {
+    case 'favorites':
+      return pokemons.filter(p => p.isFavorite);
+    case 'seen':
+      return pokemons.filter(p => p.isSeen);
+    default;
+      return pokemons;  
+  }
+};
+```  
+
 ## Tecnologias Utilizadas
 
 - [React](https://reactjs.org/)
