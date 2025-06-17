@@ -1,3 +1,4 @@
+// frontend/src/components/Modal/Modal.jsx
 function Modal({ isOpen, onClose, pokemon }) {
   if (!isOpen || !pokemon) return null;
 

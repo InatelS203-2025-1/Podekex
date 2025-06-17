@@ -1,3 +1,4 @@
+# backend/app/services/pokemon_service.py
 import json
 from pathlib import Path
 

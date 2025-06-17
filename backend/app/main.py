@@ -1,6 +1,7 @@
+# backend/app/main.py
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.api import pokemons # type: ignore
+from app.api import pokemons
 
 app = FastAPI()
 

@@ -1,3 +1,4 @@
+// frontend/src/App.jsx
 import Home from './Home/Home';
 
 function App() {

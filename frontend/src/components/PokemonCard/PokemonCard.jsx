@@ -1,3 +1,4 @@
+// frontend/src/components/PokemonCard/PokemonCard.jsx
 import imgPokemon from "../../assets/pokemon-desconhecido-icon.png";
 
 const typeColors = {

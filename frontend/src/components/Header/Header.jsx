@@ -1,3 +1,4 @@
+// frontend/src/components/Header/Header.jsx
 function Header({ searchTerm, setSearchTerm }) {
   return (
     <header className="bg-red-600 text-white py-4 shadow-md">

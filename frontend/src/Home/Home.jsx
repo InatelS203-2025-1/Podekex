@@ -1,3 +1,4 @@
+// frontend/src/Home/Home.jsx
 import React, { useState, useEffect } from "react";
 import Header from "../components/Header/Header";
 import PokemonCard from "../components/PokemonCard/PokemonCard";

@@ -1,3 +1,4 @@
+# backend/app/api/pokemons.py
 from fastapi import APIRouter
 from app.services import pokemon_service
 from app.models.pokemon_model import Pokemon
