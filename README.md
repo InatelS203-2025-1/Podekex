@@ -2,7 +2,6 @@
   <img src="https://icon-library.com/images/pokedex-icon/pokedex-icon-19.jpg" width="60" style="vertical-align: middle; margin-right: 15px;" />
   Podékex 
 </h1>
-
  
 
 Este projeto consiste em uma aplicação web para visualização e gerenciamento de uma Pokédex, desenvolvida com:
@@ -10,40 +9,42 @@ Este projeto consiste em uma aplicação web para visualização e gerenciamento
 - Front-end: React + Tailwind CSS
 - Back-end: FastAPI
 - Banco de dados: JSON local com os 386 Pokémons
-<br>
+
 
 ## Modelos Arquiteturais
 
-1. Arquitetura do Frontend: **SPA** (Single Page Application)
-Optamos pelo modelo SPA para garantir:
+1. Arquitetura do Frontend: `SPA` (Single Page Application)
 
-- Experiência fluida e rápida, sem recarregamento de páginas.
-- Separação clara entre apresentação (frontend) e lógica de negócios (backend).
-- Facilidade de manutenção e escalabilidade.
+  Optamos pelo modelo SPA para garantir:
 
-A aplicação React é responsável por:
+  - Experiência fluida e rápida, sem recarregamento de páginas.
+  - Separação clara entre apresentação (frontend) e lógica de negócios (backend).
+  - Facilidade de manutenção e escalabilidade.
 
-- Gerenciar estado e interface.
-- Fazer requisições HTTP à API backend para consumir e manipular os dados.
-- Renderizar dinamicamente os componentes com base no estado global.
+  A aplicação React é responsável por:
 
-2. Arquitetura do Backend: **SOA** (Service-Oriented Architecture)
-A API RESTful foi construída com FastAPI utilizando o padrão SOA, garantindo:
+  - Gerenciar estado e interface.
+  - Fazer requisições HTTP à API backend para consumir e manipular os dados.
+  - Renderizar dinamicamente os componentes com base no estado global.
 
-- Separação clara das responsabilidades por domínio.
-- Serviços modulares e independentes.
-- Facilidade para evolução e manutenção da aplicação.
+2. Arquitetura do Backend: `SOA` (Service-Oriented Architecture)
+  A API RESTful foi construída com FastAPI utilizando o padrão SOA, garantindo:
 
-O backend possui:
+  - Separação clara das responsabilidades por domínio.
+  - Serviços modulares e independentes.
+  - Facilidade para evolução e manutenção da aplicação.
 
-- Camada de API: expõe os endpoints.
-- Camada de Service: contém a lógica de negócios (ex.: marcação de pokémons como vistos).
-- Camada de Model: define a estrutura dos dados com Pydantic.
-- Camada de Dados: simula persistência com um arquivo pokemons.json.
+  O backend possui:
+
+  - Camada de API: expõe os endpoints.
+  - Camada de Service: contém a lógica de negócios (ex.: marcação de pokémons como vistos).
+  - Camada de Model: define a estrutura dos dados com Pydantic.
+  - Camada de Dados: simula persistência com um arquivo pokemons.json.
+
 
 ## Design Patterns
 
-1. Singleton
+1. `Singleton`
 
 ```javascript
 // api.js
@@ -57,7 +58,7 @@ export const getPokemons = () => api.get('/pokemons');
 ```
 Utilizamos o padrão Singleton no frontend ao criar uma única instância da API com axios. Isso garante que todas as requisições HTTP da aplicação utilizem a mesma configuração de baseURL e facilita a manutenção e extensão.
 
-2. Facade
+2. `Facade`
 
 ```javascript
 // PokemonService.js
@@ -81,12 +82,12 @@ const PokemonService = {
 
 export default PokemonService;
 ```
-Criamos um arquivo chamado **PokemonService.js**, que atua como uma fachada para todas as operações assíncronas da aplicação relacionadas a pokémons, como:
-- Buscar todos os pokémons (**getAllPokemons**)
-- Marcar como visto (**markAsSeen**)
-- Adicionar ou remover do baralho (**toggleDeck**)
+Criamos um arquivo chamado `PokemonService.js`, que atua como uma fachada para todas as operações assíncronas da aplicação relacionadas a pokémons, como:
+- Buscar todos os pokémons (`getAllPokemons`)
+- Marcar como visto (`markAsSeen`)
+- Adicionar ou remover do baralho (`toggleDeck`)
 
-3. Observer (implícito)
+3. `Observer` (implícito)
 
 ```javascript
 // No componente Home.jsx, usamos o useState para armazenar a lista de pokémons:
@@ -105,9 +106,9 @@ useEffect(() => {
 }, []);
 ```
 
-Embora o React não implemente explicitamente o padrão Observer como em bibliotecas como RxJS, seu funcionamento interno segue esse padrão de forma implícita, especialmente com o uso de **useState** e **useEffect**.
+Embora o React não implemente explicitamente o padrão Observer como em bibliotecas como RxJS, seu funcionamento interno segue esse padrão de forma implícita, especialmente com o uso de `useState` e `useEffect`.
 
-4. Strategy
+4. `Strategy`
 
 ```javascript
 const filterStrategies = {
@@ -128,7 +129,8 @@ const filtered = pokemons
 Na tela principal da Pokédex, o usuário pode filtrar os pokémons exibidos por três critérios: Todos, Vistos e Baralho. Antes, essa lógica de filtragem estava acoplada diretamente ao método de filter(), o que tornava o código menos legível e difícil de expandir.
 
 Solução aplicada:
-Refatoramos o código utilizando o padrão de projeto **Strategy**, que encapsula diferentes estratégias de filtragem em funções independentes, facilitando a manutenção e expansão.
+Refatoramos o código utilizando o padrão de projeto `Strategy`, que encapsula diferentes estratégias de filtragem em funções independentes, facilitando a manutenção e expansão.
+
 
 ## Tecnologias Utilizadas
 
@@ -141,7 +143,7 @@ Refatoramos o código utilizando o padrão de projeto **Strategy**, que encapsul
 - [Pydantic](https://docs.pydantic.dev/latest/)
 - [Uvicorn](https://www.uvicorn.org)
 - [Axios](https://axios-http.com/ptbr/)
-<br>
+
 
 ## Estrutura das pastas
 
@@ -175,20 +177,20 @@ Refatoramos o código utilizando o padrão de projeto **Strategy**, que encapsul
 │   └── index.html
 └── README.md
 ```
-<br>
+
 
 ## Pré-requisitos
 
 - Node.js (v18+)
 - Python 3.9+
 - pip
-<br>
+
 
 ## Clone o repositório
 ```bash
 git clone https://github.com/InatelS203-2025-1/Podekex.git
 ```
-<br>
+
 
 ## Backend
 
@@ -214,8 +216,7 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 Por padrão, rodará em: http://localhost:8000
-<br>
-<br>
+
 
 ### Estrutura do backend
 
@@ -224,7 +225,7 @@ Por padrão, rodará em: http://localhost:8000
 - 📁 services/: lógica de negócios
 - 📁 data/: arquivo pokemons.json
 - 📄 main.py: ponto de entrada da aplicação
-<br>
+
 
 ### Endpoints principais
 
@@ -238,8 +239,7 @@ Por padrão, rodará em: http://localhost:8000
 | DELETE | /api/pokemons/{id}/deck | Remove do baralho            |
 
 Acesse http://localhost:8000/docs para a documentação interativa (Swagger UI).
-<br>
-<br>
+
 
 ## Frontend
 
@@ -258,8 +258,7 @@ npm install
 npm run dev
 ```
 Por padrão, rodará em: http://localhost:5173
-<br>
-<br>
+
 
 ### Estrutura do frontend
 
@@ -267,7 +266,7 @@ Por padrão, rodará em: http://localhost:5173
 - 📁 Home/: Página principal
 - 📁 api/: Configuração do Axios para consumir a API
 - 📁 data/: (não mais usado, agora os dados vêm da API)
-<br>
+
 
 ### Funcionalidades
 
@@ -276,11 +275,17 @@ Por padrão, rodará em: http://localhost:5173
 - Modal com informações detalhadas ao clicar.
 - Marcar como visto ao interagir.
 - Adicionar ou remover pokémons do baralho
-<br>
-<br>
+
 
 ## Integração Front ↔ Back
 
 - O front consome os dados da API via Axios.
 - As ações (marcar como visto, adicionar/remover do baralho) são feitas via requisições POST/DELETE.
 - Middleware CORS configurado no FastAPI para permitir conexão com React (localhost:5173).
+
+
+## Licença
+
+Este projeto está licenciado sob os termos da licença [MIT](LICENSE).
+
+Você pode usar, modificar e distribuir livremente, desde que mantenha os créditos dos autores.
