@@ -17,8 +17,6 @@ def get_seen():
 def get_deck():
     return [p for p in pokemons if p["on_deck"]]
 
-from fastapi import HTTPException
-
 def mark_as_seen(pokemon_id: int):
     for p in pokemons:
         if p["id"] == pokemon_id:
@@ -47,3 +45,11 @@ def remove_from_deck(pokemon_id: int):
             p["on_deck"] = False
             return
     raise HTTPException(status_code=404, detail="Pokemon não encontrado")
+
+# feature nova
+def reset_all():
+    for p in pokemons:
+        if p["viewed"] == True:
+            if p["on_deck"] == True:
+                p["on_deck"] = False
+            p["viewed"] = False

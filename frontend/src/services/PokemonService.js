@@ -14,7 +14,11 @@ const PokemonService = {
   async toggleDeck(id, inDeck) {
     const method = inDeck ? "delete" : "post";
     return API[method](`/pokemons/${id}/deck`);
-  }
+  },
+
+  async resetAll() {
+    return API.delete("/pokemons/resetall");
+  },
 };
 
 export default PokemonService;
