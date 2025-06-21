@@ -32,7 +32,6 @@ def remove_from_deck(pokemon_id: int):
     pokemon_service.remove_from_deck(pokemon_id)
     return {"message": "Pokemon removido do deck"}
 
-# feature nova
 @router.delete("/resetall")
 def reset_all():
     pokemon_service.reset_all()

@@ -46,7 +46,6 @@ def remove_from_deck(pokemon_id: int):
             return
     raise HTTPException(status_code=404, detail="Pokemon não encontrado")
 
-# feature nova
 def reset_all():
     for p in pokemons:
         if p["viewed"] == True:
