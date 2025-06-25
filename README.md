@@ -148,7 +148,7 @@ Refatoramos o código utilizando o padrão de projeto `Strategy`, que encapsula 
 ## Estrutura das pastas
 
 ```
-/
+Podekex/
 ├── backend/
 │   ├── app/
 │   │   ├── api/
@@ -165,6 +165,7 @@ Refatoramos o código utilizando o padrão de projeto `Strategy`, que encapsula 
 │   ├── public/
 │   ├── src/
 │   │   ├── api/
+│   │   ├── services/
 │   │   ├── assets/
 │   │   ├── components/
 │   │   │   ├── Header/
@@ -175,6 +176,10 @@ Refatoramos o código utilizando o padrão de projeto `Strategy`, que encapsula 
 │   │   └── main.jsx
 │   ├── package.json
 │   └── index.html
+├── tests/
+│   ├── newman/
+│   ├── Podekex.postman_collection.json
+│   └── Podekex.postman_environment.json
 └── README.md
 ```
 
@@ -215,7 +220,7 @@ pip install -r requirements.txt
 ```bash
 uvicorn app.main:app --reload
 ```
-Por padrão, rodará em: http://localhost:8000
+> Por padrão, rodará em: http://localhost:8000
 
 
 ### Estrutura do backend
@@ -237,8 +242,8 @@ Por padrão, rodará em: http://localhost:8000
 | POST   | /api/pokemons/{id}/seen | Marca como visto             |
 | POST   | /api/pokemons/{id}/deck | Adiciona ao baralho          |
 | DELETE | /api/pokemons/{id}/deck | Remove do baralho            |
-
-Acesse http://localhost:8000/docs para a documentação interativa (Swagger UI).
+| DELETE | /api/pokemons/resetall  | `Reseta todos os pokémons`   |
+> Acesse http://localhost:8000/docs para a documentação interativa (Swagger UI).
 
 
 ## Frontend
@@ -257,15 +262,15 @@ npm install
 ```bash
 npm run dev
 ```
-Por padrão, rodará em: http://localhost:5173
+> Por padrão, rodará em: http://localhost:5173
 
 
 ### Estrutura do frontend
 
 - 📁 components/: Componentes reutilizáveis (Header, Modal, PokemonCard)
 - 📁 Home/: Página principal
-- 📁 api/: Configuração do Axios para consumir a API
-- 📁 data/: (não mais usado, agora os dados vêm da API)
+- 📁 api/: Configuração do Axios (Singleton) para consumir a API
+- 📁 services/: Camada de abstração (Facade) das requisições assíncronas à API
 
 
 ### Funcionalidades
@@ -275,13 +280,52 @@ Por padrão, rodará em: http://localhost:5173
 - Modal com informações detalhadas ao clicar.
 - Marcar como visto ao interagir.
 - Adicionar ou remover pokémons do baralho
+- Resetar os Pokémons para desconhecido.
+
+
+## Testes Automatizados
+
+A aplicação possui testes automatizados de API utilizando `Postman` e `Newman`.
+
+
+### Como executar os testes
+
+1. Instale o Newman (caso ainda não tenha):
+```bash
+npm install -g newman
+```
+
+2. Navegue até o diretório tests:
+```bash
+cd tests
+```
+
+3. Execute a coleção com:
+```bash
+newman run tests/Podekex.postman_collection.json -e tests/Podekex.postman_environment.json
+```
+> Um relatório em HTML será gerado automaticamente para inspeção detalhada dos testes executados.
+
+
+### Cobertura dos testes
+
+| Teste                               | Método    | Endpoint                | Status esperado |
+| ----------------------------------- | --------- | ----------------------- | --------------- |
+| Obtendo todos os pokémons           | `GET`     | `/api/pokemons/`        | 200 OK          |
+| Obtendo somente os pokémons vistos  | `GET`     | `/api/pokemons/seen`    | 200 OK          |
+| Obtendo somente os pokémons no deck | `GET`     | `/api/pokemons/deck`    | 200 OK          |
+| Marcando pokémon como visto         | `POST`    | `/api/pokemons/2/seen`  | 200 OK          |
+| Adicionando pokémon ao deck         | `POST`    | `/api/pokemons/2/deck`  | 200 OK          |
+| Removendo pokémon do deck           | `DELETE`  | `/api/pokemons/2/deck`  | 200 OK          |
+> Nota: Embora o endpoint /api/pokemons/resetall esteja implementado no backend, ele ainda não está coberto na collection atual.
 
 
 ## Integração Front ↔ Back
 
 - O front consome os dados da API via Axios.
-- As ações (marcar como visto, adicionar/remover do baralho) são feitas via requisições POST/DELETE.
+- As ações (marcar como visto, adicionar/remover do baralho) são feitas via requisições `POST/DELETE`.
 - Middleware CORS configurado no FastAPI para permitir conexão com React (localhost:5173).
+- O botão de reset no frontend envia uma requisição `DELETE`, que redefine todos os pokémons para `viewed: false` e `on_deck: false`.
 
 
 ## Licença
