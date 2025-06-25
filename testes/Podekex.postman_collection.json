@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "074a412d-48ec-4a9a-b959-3e6af234423a",
+		"name": "Podekex",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44960080",
+		"_collection_link": "https://gabriel-4646105.postman.co/workspace/Gabriel's-Workspace~996c9288-7f08-400a-852f-22221a0e3233/collection/44960080-074a412d-48ec-4a9a-b959-3e6af234423a?action=share&source=collection_link&creator=44960080"
+	},
+	"item": [
+		{
+			"name": "Obtendo todos os pokémons",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function (){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/api/pokemons/",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"api",
+						"pokemons",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtendo somente os pokémons vistos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function (){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/api/pokemons/seen",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"api",
+						"pokemons",
+						"seen"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtendo somente os pokémons no deck",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function (){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/api/pokemons/deck",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"api",
+						"pokemons",
+						"deck"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Marcando pokémon como visto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function (){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/api/pokemons/2/seen",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"api",
+						"pokemons",
+						"2",
+						"seen"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Marcando pokémon como on_deck",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function (){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/api/pokemons/2/deck",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"api",
+						"pokemons",
+						"2",
+						"deck"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletando pokemons do deck",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function (){\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BaseURL}}/api/pokemons/2/deck",
+					"host": [
+						"{{BaseURL}}"
+					],
+					"path": [
+						"api",
+						"pokemons",
+						"2",
+						"deck"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
